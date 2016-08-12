@@ -14,18 +14,6 @@
          "spec": {
             "triggers": [
                {
-                  "type": "GitHub",
-                  "github": {
-                     "secret": "secret"
-                  }
-               },
-               {
-                  "type": "Generic",
-                  "generic": {
-                     "secret": "secret"
-                  }
-               },
-               {
                   "type": "ImageChange",
                   "imageChange": {}
                }
@@ -33,7 +21,7 @@
             "source": {
                "type": "Git",
                "git": {
-                  "uri": "https://github.com/jorgemoralespou/osev3-examples.git",
+                  "uri": "https://github.com/luszczynski/osev3-examples.git",
                   "ref": "master"
                },
                "contextDir": "spring-boot/springboot-sti"
@@ -43,7 +31,7 @@
                "dockerStrategy": {
                   "from": {
                      "kind": "ImageStreamTag",
-                     "name": "centos:7"
+                     "name": "rhel:latest"
                   }
                }
             },
@@ -60,10 +48,10 @@
          "kind": "ImageStream",
          "apiVersion": "v1",
          "metadata": {
-            "name": "centos"
+            "name": "rhel"
          },
          "spec": {
-            "dockerImageRepository": "library/centos:centos7"
+            "dockerImageRepository": "registry.access.redhat.com/rhel7/rhel"
          }
       },
       {
@@ -120,7 +108,7 @@
             {
                "description": "Git source URI for application",
                "name": "GIT_URI",
-               "value": "https://github.com/jorgemoralespou/osev3-examples.git"
+               "value": "https://github.com/luszczynski/osev3-examples.git"
             },
             {
                "description": "Git branch/tag reference",
@@ -362,7 +350,7 @@
             {
                "description": "Git source URI for application",
                "name": "GIT_URI",
-               "value": "https://github.com/jorgemoralespou/osev3-examples.git"
+               "value": "https://github.com/luszczynski/osev3-examples.git"
             },
             {
                "description": "Git branch/tag reference",
